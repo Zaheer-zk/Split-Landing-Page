@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Freehand&family=Kaushan+Script&family=Poppins:ital,wght@1,200&family=Roboto:wght@400;700&family=Smooch&display=swap');
+
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.4);
+  --right-bg-color: rgba(114, 87, 47, 0.4);
+  --left-btn-hover-color: rgba(87, 84, 236, 1);
+  --right-btn-hover-color: #70422c;
+  --hover-width: 70%;
+  --other-width: 30%;
+  --speed: 1000ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 0.2rem solid #fff;
+  width: 15rem;
+  padding: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  background: url('wp5042784-hayato-garena-free-fire-wallpapers.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0;
+}
+
+.split.left::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+.split.left .btn:hover {
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+  transition: background-color 0.3s ease-in;
+}
+
+.split.right {
+  right: 0;
+  background: url('wp5171877-pubg-mobile-hd-thumbnails-wallpapers.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+.split.right .btn:hover {
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+  transition: background-color 0.2s ease-in;
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.split.left,
+.split.right,
+.split.right::before,
+.split.left::before {
+  transition: all var(--speed) ease-in-out;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 
+media queries */
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+  .btn {
+    font-size: 1rem;
+    width: 10rem;
+    padding: 0.8rem;
+  }
+}
